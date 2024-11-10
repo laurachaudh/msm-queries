@@ -25,20 +25,25 @@
 </dl>
 
 <h2>Filmography</h2>
-
-<table border = "1">
-
 <% matching_movies = Movie.where({ :director_id => @the_director.id})%>
+<table border = "1">
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Image</th>
+    <th>Year</th>
+    <th>Director</th>
+  </tr>
 
 <% matching_movies.each do |a_movie| %>
  <tr>
     <td><%= a_movie.id %></td>
-    <td><img src ="<%= a_movie.image %>" width = "50"></td>
     <td><%= a_movie.title %></td>
+    <td><img src ="<%= a_movie.image %>" width = "50"></td>
     <td><%= a_movie.year %></td>
-    <td><%= @the_director.name%></td>
+    <td><%= @the_director.name %></td>
     <td>
-      <a href="/movies/<%= @a_movie.id %>">
+      <a href="/movies/<%= a_movie.id %>">
         Show Details
       </a>
     </td>
