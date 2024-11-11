@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get("/directors/youngest", { :controller => "directors", :action => "youngest" })
+
+  get("/directors/eldest", { :controller => "directors", :action => "eldest" })
+  
   get("/", { :controller => "misc", :action => "homepage" })
 
   get("/directors", { :controller => "directors", :action => "index" })
